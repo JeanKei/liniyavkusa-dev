@@ -2,15 +2,15 @@
 
 /* подключаем стили и js */
 
-// add_action( 'wp_enqueue_scripts', function(){
-//   wp_enqueue_style( 'znam-vendor', get_stylesheet_directory_uri() . '/app/css/vendor.css' );
-//   wp_enqueue_style( 'znam-style', get_stylesheet_directory_uri() . '/app/css/main.css' );
-//   wp_enqueue_style( 'znam-fonts', get_stylesheet_directory_uri() . '/app/fonts/fonts.css' );
+add_action( 'wp_enqueue_scripts', function(){
+  wp_enqueue_style( 'lin-vendor', get_stylesheet_directory_uri() . '/app/css/vendor.css' );
+  wp_enqueue_style( 'lin-style', get_stylesheet_directory_uri() . '/app/css/main.css' );
+  wp_enqueue_style( 'lin-fonts', get_stylesheet_directory_uri() . '/app/fonts/fonts.css' );
 
-//   wp_enqueue_script( 'jquery' );
-//   wp_enqueue_script('znam-js', get_template_directory_uri() . '/app/js/main.js', array(), '20151218', true);
+  // wp_enqueue_script( 'jquery' );
+  wp_enqueue_script('lin-js', get_template_directory_uri() . '/app/js/main.js', array(), '20151218', true);
 
-// });
+});
 
 
 /* ======= скрыть админ панель  =========*/
@@ -21,17 +21,17 @@ add_filter('show_admin_bar', '__return_false');
 
 /* регистрация меню */
 
-// register_nav_menus(
-// 	array(
-// 		'head_menu' => 'Меню в шапке',
-// 	)
-// );
+register_nav_menus(
+	array(
+		'head_menu-left' => 'Меню в шапке левое',
+	)
+);
 
-// register_nav_menus(
-// 	array(
-// 		'head_menu2' => 'Меню в шапке2',
-// 	)
-// );
+register_nav_menus(
+	array(
+		'head_menu-right' => 'Меню в шапке правое',
+	)
+);
 
 // хлебные крошки
 
