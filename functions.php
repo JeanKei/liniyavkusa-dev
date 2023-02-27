@@ -33,6 +33,38 @@ register_nav_menus(
 	)
 );
 
+register_nav_menus(
+	array(
+		'our_menu' => 'Меню',
+	)
+);
+
+
+/* woocommerce - подключил подгрузку папки woocommerce из моей темы (не хук) */
+add_theme_support( 'woocommerce' );
+
+// Убираем сортировку
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+
+remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 );
+remove_action( 'woocommerce_after_shop_loop' , 'woocommerce_result_count', 20 );
+
+function wpa89819_wc_single_product(){
+
+  $product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
+
+  if ( $product_cats && ! is_wp_error ( $product_cats ) ){
+
+      $single_cat = array_shift( $product_cats ); ?>
+
+      <h2 itemprop="name" class="product_category_title"><span><?php echo $single_cat->name; ?></span></h2>
+
+<?php }
+}
+add_action( 'woocommerce_single_product_summary', 'wpa89819_wc_single_product', 2 );
+
+
 // хлебные крошки
 
 // function wpcourses_breadcrumb( $sep = ' > ' ) {
@@ -57,3 +89,9 @@ register_nav_menus(
 // 	$out .= '</div><!--.wpcourses-breadcrumbs-->';
 // 	return $out;
 // }
+
+
+
+// add_action( 'woocommerce_before_main_content', 'woocommerce_product_category', 100 );
+
+

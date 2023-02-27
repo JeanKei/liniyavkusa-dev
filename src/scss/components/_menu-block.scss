@@ -1,0 +1,27 @@
+.menu-block {
+  position: sticky;
+  top: 25px;
+}
+
+.our-menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
+  max-width: 626px;
+  margin: 0 auto;
+  a {
+    background: #E5D7BE;
+    box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
+    border-radius: 30px;
+    padding: 11px 26px;
+    color: #000000!important;
+  }
+  li {
+    margin-bottom: 15px;
+  }
+}

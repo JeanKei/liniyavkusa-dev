@@ -5,5 +5,11 @@
 @import "settings";
 
 // подключения компонентов страницы
+@import "./components/common";
 @import "./components/header";
 @import "./components/menu";
+@import "./components/main-hero";
+@import "./components/main-descr";
+@import "./components/menu-block";
+@import "./components/products";
+
