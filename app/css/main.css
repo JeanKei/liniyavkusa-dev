@@ -37,7 +37,7 @@ html {
 
 .page {
   height: 100%;
-  font-family: var(--font-family, sans-serif);
+  font-family: "CeraPro";
   -webkit-text-size-adjust: 100%;
 }
 
@@ -133,6 +133,7 @@ a {
 }
 
 .main-title {
+  font-family: "CeraPro";
   font-weight: 300;
   font-size: 40px;
   line-height: 50px;
@@ -169,11 +170,11 @@ a {
 
 .menu-item a {
   color: #FFFFFF;
-  font-family: "CeraPro-Reg";
+  font-family: "CeraPro";
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
-  line-height: 19px;
+  font-size: 14px;
+  line-height: 18px;
   color: #FFFFFF;
   -webkit-transition: color 0.3s ease-in-out;
   -o-transition: color 0.3s ease-in-out;
@@ -422,6 +423,16 @@ a {
   color: #FFFFFF;
   padding: 16px 64px;
   cursor: pointer;
+  font-family: "CeraPro";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.main-hero__btn:hover {
+  background: rgba(255, 255, 255, 0.44);
 }
 
 .section-figure {
@@ -476,6 +487,7 @@ a {
   border-radius: 0 0 4px;
 }
 .main-descr__text {
+  font-family: "CeraPro";
   display: block;
   font-weight: 400;
   font-size: 16px;
@@ -489,7 +501,9 @@ a {
 
 .menu-block {
   position: sticky;
-  top: 25px;
+  top: 0px;
+  background-color: #fff;
+  padding: 10px 0;
 }
 
 .our-menu {
@@ -507,37 +521,208 @@ a {
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 15px;
-  max-width: 626px;
+  gap: 8px;
+  max-width: 100%;
   margin: 0 auto;
 }
 .our-menu a {
-  background: #E5D7BE;
+  display: inline-block;
+  font-family: "CeraPro";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #E5D7BE;
   -webkit-box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
   box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
   border-radius: 30px;
-  padding: 11px 26px;
+  padding: 7px 20px;
   color: #000000 !important;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  border: 1px solid #E5D7BE;
 }
-.our-menu li {
-  margin-bottom: 15px;
+.our-menu a:hover {
+  background-color: #FFFFFF;
+  color: #000000 !important;
 }
 
 .columns-4 {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;
 }
 
 .products-block__title {
   padding-top: 120px;
+  padding-bottom: 34px;
   text-align: center;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  color: #000000;
+  margin: 0;
 }
 
 .products-block .products {
   list-style: none;
   padding: 0;
+}
+.products-block img {
+  width: 362px;
+  height: 256px;
+  border-radius: 8px;
+}
+.products-block .woocommerce-loop-product__title {
+  margin: 0;
+  padding-top: 10px;
+  font-family: "CeraPro";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  color: #121212;
+}
+.products-block p {
+  margin: 0;
+  padding: 10px 0;
+  font-family: "CeraPro";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #121212;
+}
+.products-block .woocommerce-Price-amount {
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #121212;
+}
+.products-block .price {
+  display: block;
+  padding-bottom: 44px;
+}
+.products-block .wp-element-button {
+  display: inline-block;
+  font-family: "CeraPro";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  border: 1px solid #E6D5BD;
+  border-radius: 30px;
+  padding: 11px 44px;
+  background-color: #ffffff;
+  -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.products-block .wp-element-button:hover {
+  background-color: #AD9A7E;
+  color: #ffffff;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+.products-block .addtocartbutton {
+  margin-right: 19px;
+  display: inline-block;
+  font-family: "CeraPro";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  border: 1px solid #E6D5BD;
+  border-radius: 30px;
+  padding: 11px 36px;
+  background-color: #E6D5BD;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.products-block .addtocartbutton:hover {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+a.added_to_cart.wc-forward {
+  display: none;
+}
+
+.products-block .type-product {
+  background: #FFFFFF;
+  border: 1px solid rgba(18, 18, 18, 0.05);
+  -webkit-box-shadow: -15px -16px 44px rgba(215, 228, 249, 0.14), 0px 18px 52px rgba(215, 228, 249, 0.28);
+  box-shadow: -15px -16px 44px rgba(215, 228, 249, 0.14), 0px 18px 52px rgba(215, 228, 249, 0.28);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+#top-cart {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  z-index: 2;
+}
+
+#top-cart .top-cart-icon {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#top-cart .top-cart-icon__wrap {
+  width: 56px;
+  height: 56px;
+}
+
+#top-cart .cart-items {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  color: #fff;
+  border-radius: 30px;
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  text-align: center;
+  line-height: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cart__modal {
+  padding: 25px 34px;
+}
+.cart__modal img {
+  width: 96px;
+  height: 96px;
+}
+.cart__modal li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.woocommerce-mini-cart {
+  list-style: none;
 }
 /*# sourceMappingURL=main.css.map */

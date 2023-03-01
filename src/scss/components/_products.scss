@@ -1,12 +1,19 @@
 .columns-4 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;
 }
 
 .products-block__title {
   padding-top: 120px;
+  padding-bottom: 34px;
   text-align: center;
+  font-family: 'CeraPro';
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  color: #000000;
+  margin: 0;
 }
 
 
@@ -15,4 +22,84 @@
     list-style: none;
     padding: 0;
   }
+  img {
+    width: 362px;
+    height: 256px;
+    border-radius: 8px;
+  }
+
+  .woocommerce-loop-product__title {
+    margin: 0;
+    padding-top: 10px;
+    font-family: 'CeraPro';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    color: #121212;
+  }
+  p {
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'CeraPro';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #121212;
+
+  }
+  .wp-element-button {
+    // display: block;
+  }
+  .woocommerce-Price-amount {
+    font-family: 'CeraPro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #121212;
+  }
+  .price {
+    display: block;
+    padding-bottom: 44px;
+  }
+  .wp-element-button {
+    display: inline-block;
+    font-family: 'CeraPro';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    border: 1px solid #E6D5BD;
+    border-radius: 30px;
+    padding: 11px 44px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  .wp-element-button:hover {
+    background-color: #AD9A7E;
+    color: #ffffff;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+  }
+  .addtocartbutton {
+    margin-right: 19px;
+    display: inline-block;
+    font-family: 'CeraPro';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    border: 1px solid #E6D5BD;
+    border-radius: 30px;
+    padding: 11px 36px;
+    background-color: #E6D5BD;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .addtocartbutton:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+  }
 }
+
+a.added_to_cart.wc-forward {
+  display: none;
+  }

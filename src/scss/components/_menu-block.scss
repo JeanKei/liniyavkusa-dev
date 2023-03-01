@@ -1,6 +1,8 @@
 .menu-block {
   position: sticky;
-  top: 25px;
+  top: 0px;
+  background-color: #fff;
+  padding: 10px 0;
 }
 
 .our-menu{
@@ -11,17 +13,26 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 15px;
-  max-width: 626px;
+  gap: 8px;
+  max-width: 100%;
   margin: 0 auto;
   a {
-    background: #E5D7BE;
+    display: inline-block;
+    font-family: 'CeraPro';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    background-color: #E5D7BE;
     box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
     border-radius: 30px;
-    padding: 11px 26px;
+    padding: 7px 20px;
+    color: #000000!important;
+    transition: background-color 0.3s ease-in-out;
+    border: 1px solid #E5D7BE;
+  }
+  a:hover {
+    background-color: #FFFFFF;
     color: #000000!important;
   }
-  li {
-    margin-bottom: 15px;
-  }
 }
+

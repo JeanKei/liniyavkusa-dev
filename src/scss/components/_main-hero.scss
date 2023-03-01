@@ -21,6 +21,15 @@
     color: #FFFFFF;
     padding: 16px 64px;
     cursor: pointer;
+    font-family: 'CeraPro';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  &__btn:hover {
+    background: rgba(255, 255, 255, 0.44);
   }
 }
 

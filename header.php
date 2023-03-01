@@ -59,3 +59,18 @@
       </div>
     </div>
   </header>
+ <!-- shopping cart -->
+<?php if (class_exists('woocommerce')) : ?>
+	<!-- <a id="top-cart" href="/cart" data-graph-path="lead" > -->
+  <a id="top-cart" data-graph-path="lead" >
+		<div class="top-cart-icon">
+      <div class="top-cart-icon__wrap">
+        <svg role="img" style="stroke:#E5D7BE;" class="t706__carticon-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M44 18h10v45H10V18h10z"></path><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M22 24V11c0-5.523 4.477-10 10-10s10 4.477 10 10v13"></path></svg>
+        <div class="cart-items">
+          <div class="count"><?php echo sprintf(_n('%d ', '%d ', WC()->cart->cart_contents_count, 'store'), WC()->cart->cart_contents_count); ?></div>
+        </div>
+      </div>
+		</div>
+  </a>
+<?php endif; ?>
+<!-- shopping cart end -->

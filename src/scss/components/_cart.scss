@@ -1,0 +1,16 @@
+.cart__modal {
+  padding: 25px 34px;
+  img {
+    width: 96px;
+    height: 96px;
+  }
+  li {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+.woocommerce-mini-cart {
+  list-style: none;
+}
