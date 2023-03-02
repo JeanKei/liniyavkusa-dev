@@ -10,6 +10,7 @@
         <button class="btn-reset js-modal-close graph-modal__close more-btn" aria-label="Закрыть модальное окно">
         </button>
         <section class="cart__modal">
+          <span class="cart__title">Корзина</span>
           <div class="header-quickcart"><?php woocommerce_mini_cart(); ?></div>
           <?php echo do_shortcode('[woocommerce_checkout]');?>
         </section>

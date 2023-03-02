@@ -250,9 +250,23 @@ function wplb_my_second( $array ) {
 
 
 
+// Купон добавили в самый конец
+
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+
+add_action( 'woocommerce_after_checkout_form', 'woocommerce_checkout_coupon_form' );
 
 
+// Изменили название подитог
 
+
+add_filter('gettext', 'translate_text');
+add_filter('ngettext', 'translate_text');
+
+function translate_text($translated) {
+$translated = str_ireplace('Подытог', 'Итоговая сумма', $translated);
+return $translated;
+}
 
 
 // хлебные крошки

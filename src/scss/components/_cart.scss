@@ -1,16 +1,134 @@
 .cart__modal {
-  padding: 25px 34px;
   img {
-    width: 96px;
-    height: 96px;
+    width: 86px;
+    height: 86px;
+    margin-right: 24px;
   }
   li {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
   }
-}
+  .quantity {
+    font-family: 'CeraPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+  }
+  .woocommerce-mini-cart__buttons {
+    display: none;
+  }
 
+  .woocommerce-mini-cart__total {
+    text-align: right;
+    font-family: 'CeraPro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: rgba(18, 18, 18, 0.85);
+    margin: 0;
+    margin-top: 34px;
+    margin-bottom: 38px;
+
+  }
+  .input-text  {
+    border: 1px solid rgba(18, 18, 18, 0.2)!important;
+    border-radius: 118px!important;
+    color: rgba(18, 18, 18, 0.26)!important;
+    padding: 19px 30px!important;
+  }
+  .woocommerce form .form-row-first, .woocommerce form .form-row-last, .woocommerce-page form .form-row-first, .woocommerce-page form .form-row-last {
+    width:100%;
+    overflow: visible;
+}
+}
 
 .woocommerce-mini-cart {
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.graph-modal__container {
+  padding: 25px 34px;
+}
+
+
+.cart__title {
+  display: block;
+  font-family: 'CeraPro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  color: #121212;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+
+}
+
+.header-quickcart {
+  margin-top: 24px;
+}
+
+.mini_cart_item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'CeraPro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #121212;
+
+}
+
+
+.graph-modal__container {
+  max-width: 766px;
+}
+
+.woocommerce-billing-fields h3 {
+  display: none;
+}
+
+
+.remove_from_cart_button {
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 300!important;
+  font-size: 25px!important;
+  line-height: 25px!important;
+  color: #121212;
+  border-radius: 100%;
+  border: 1px solid rgba(18, 18, 18, .4);
+  width: 30px;
+  height: 30px;
+  padding-bottom: 3px;
+  margin-left: 34px;
+}
+
+
+.woocommerce-mini-cart-item-group .quantity {
+  display: flex;
+  align-items: center;
+}
+
+.woocommerce-mini-cart-item-group {
+  display: flex;
+  align-items: center;
+}
+
+
+.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
+  display: flex;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
