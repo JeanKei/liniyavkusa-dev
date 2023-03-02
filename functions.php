@@ -114,11 +114,8 @@ echo do_shortcode('<a href="'.$link.'" class="button addtocartbutton">Подро
 }
 
 
-
 /* добавили кнопку «в корзину» в товарах каталога WooC*/
 add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-
-
 
 // --------------------------------- РАБОТАЕТ -------------------------------
 // Добавил автообновление в мини корзине + в mini cart - (ВАЖНО!! добавили нужный div с классом widget_shopping_cart_content -
@@ -138,6 +135,124 @@ add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_t
 
 //     return woocommerce_quantity_input( array('input_value' => $cart_item['quantity']), $cart_item['data'], false ) . $product_price;
 // }
+
+
+// удаляем кнопку в корзину из МИНИ КОРЗИНЫ
+remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_button_view_cart', 10 );
+
+
+// удаляем кнопку в ОФОРМЛЕНИЯ ЗАКАЗА из МИНИ КОРЗИНЫ
+remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
+
+
+
+add_filter( 'woocommerce_checkout_fields', 'wpbl_remove_some_fields', 9999 );
+
+  function wpbl_remove_some_fields( $array ) {
+
+    //unset( $array['billing']['billing_first_name'] ); // Имя
+    unset( $array['billing']['billing_last_name'] ); // Фамилия
+    unset( $array['billing']['billing_email'] ); // Email
+    //unset( $array['order']['order_comments'] ); // Примечание к заказу
+    //unset( $array['billing']['billing_phone'] ); // Телефон
+    //unset( $array['billing']['billing_address_1'] ); // 1-ая строка адреса
+    unset( $array['billing']['billing_company'] ); // Компания
+    unset( $array['billing']['billing_country'] ); // Страна
+    unset( $array['billing']['billing_address_2'] ); // 2-ая строка адреса
+    unset( $array['billing']['billing_city'] ); // Населённый пункт
+    unset( $array['billing']['billing_state'] ); // Область / район
+    unset( $array['billing']['billing_postcode'] ); // Почтовый индекс
+    unset( $array['order']['order_comments']); // детали
+
+    // Возвращаем обработанный массив
+    return $array;
+}
+
+add_filter( 'woocommerce_checkout_fields', 'wplb_tel_second' );
+function wplb_tel_second( $array ) {
+
+    // Меняем приоритет
+    $array['billing']['billing_phone']['priority'] = 30;
+    // Возвращаем обработанный массив
+    return $array;
+
+}
+
+
+//================================================= КАСТОМНОЕ ПОЛЕ =======================================
+
+add_filter( 'woocommerce_billing_fields', 'true_add_custom_billing_field', 25 );
+
+function true_add_custom_billing_field( $fields ) {
+
+	// массив нового поля
+	$new_field = array(
+		'billing_contactmethod' => array(
+			'type'          => 'radio', // text, textarea, select, radio, checkbox, password
+			'required'	=> true, // по сути только добавляет значок "*" и всё
+			'class'         => array( 'true-field', 'form-row-wide' ), // массив классов поля
+			'label'         => 'Необходимо ли обслуживание и сервировка?',
+			'label_class'   => 'true-label', // класс лейбла
+			'options'	=> array( // options for  or
+				'Привет'		=> 'пока', // пустое значение
+				'По телефону'	=> 'По телефону', // 'значение'=>'заголовок'
+				'По email'	=> 'По email'
+			)
+		)
+	);
+
+	// объединяем поля
+	$fields = array_slice( $fields, 0, 2, true ) + $new_field + array_slice( $fields, 2, NULL, true );
+
+	return $fields;
+
+}
+
+add_action( 'woocommerce_checkout_update_order_meta', 'true_save_field', 25 );
+
+function true_save_field( $order_id ){
+
+	if( ! empty( $_POST[ 'billing_contactmethod' ] ) ) {
+		update_post_meta( $order_id, 'billing_contactmethod', sanitize_text_field( $_POST[ 'billing_contactmethod' ] ) );
+	}
+
+}
+
+
+add_filter( 'woocommerce_get_order_item_totals', 'truemisha_field_in_email', 25, 2 );
+
+function truemisha_field_in_email( $rows, $order ) {
+
+ 	// удалите это условие, если хотите добавить значение поля и на страницу "Заказ принят"
+	if( is_order_received_page() ) {
+		return $rows;
+	}
+
+	$rows[ 'billing_contactmethod' ] = array(
+		'label' => 'Необходимо ли обслуживание и сервировка?',
+		'value' => get_post_meta( $order->get_id(), 'billing_contactmethod', true )
+	);
+
+	return $rows;
+
+}
+
+add_filter( 'woocommerce_checkout_fields', 'wplb_my_second' );
+function wplb_my_second( $array ) {
+
+    // Меняем приоритет
+    $array['billing']['billing_contactmethod']['priority'] = 130;
+    // Возвращаем обработанный массив
+    return $array;
+
+}
+//================================================= КОНЕЦ КАСТОМНОЕ ПОЛЕ =======================================
+
+
+
+
+
+
 
 
 // хлебные крошки
@@ -164,3 +279,5 @@ add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_t
 // 	$out .= '</div><!--.wpcourses-breadcrumbs-->';
 // 	return $out;
 // }
+
+
