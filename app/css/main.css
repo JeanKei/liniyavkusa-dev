@@ -749,14 +749,62 @@ a.added_to_cart.wc-forward {
   margin-bottom: 38px;
 }
 .cart__modal .input-text {
-  border: 1px solid rgba(18, 18, 18, 0.2) !important;
-  border-radius: 118px !important;
-  color: rgba(18, 18, 18, 0.26) !important;
-  padding: 19px 30px !important;
+  border: 1px solid rgba(18, 18, 18, 0.2);
+  border-radius: 118px;
+  color: rgba(18, 18, 18, 0.26);
+  padding: 19px 30px;
+  width: 100%;
+  font-family: "CeraPro";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(18, 18, 18, 0.6);
 }
 .cart__modal .woocommerce form .form-row-first, .cart__modal .woocommerce form .form-row-last, .cart__modal .woocommerce-page form .form-row-first, .cart__modal .woocommerce-page form .form-row-last {
   width: 100%;
   overflow: visible;
+  margin: 0;
+}
+.cart__modal #billing_contactmethod_field {
+  padding-top: 38px;
+  margin: 0;
+  font-family: "CeraPro";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(18, 18, 18, 0.85);
+}
+.cart__modal #billing_contactmethod_field label {
+  font-weight: 500;
+}
+.cart__modal #billing_contactmethod_field span {
+  font-weight: 400;
+}
+.cart__modal #billing_contactmethod_field .woocommerce-input-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10px 1fr;
+  grid-template-columns: 10px 1fr;
+  gap: 10px;
+  padding-top: 16px;
+}
+.cart__modal #billing_contactmethod_field abbr {
+  display: none;
+}
+
+.shop_table thead, .shop_table tbody, .shop_table .cart-subtotal, .shop_table .woocommerce-shipping-totals {
+  display: none;
+}
+
+#order_review_heading {
+  margin: 0;
+  font-family: "CeraPro";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(18, 18, 18, 0.85);
+  padding-top: 38px;
+  padding-bottom: 16px;
 }
 
 .woocommerce-mini-cart {
@@ -766,7 +814,7 @@ a.added_to_cart.wc-forward {
 }
 
 .graph-modal__container {
-  padding: 25px 34px;
+  padding: 25px 34px 80px;
 }
 
 .cart__title {
@@ -845,9 +893,6 @@ a.added_to_cart.wc-forward {
 }
 
 .woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   border: none;
   margin: 0;
   padding: 0;
@@ -888,5 +933,108 @@ a.added_to_cart.wc-forward {
 
 .woocommerce-additional-fields {
   display: none;
+}
+
+.wc_payment_methods {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.payment_method_bacs, .payment_method_cod {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10px 1fr;
+  grid-template-columns: 10px 1fr;
+  gap: 10px;
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #121212;
+}
+
+.woocommerce-privacy-policy-text {
+  display: none;
+}
+
+#place_order {
+  position: absolute;
+  bottom: 17px;
+  left: 34px;
+  right: 34px;
+  background: #E5D7BE;
+  -webkit-box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
+  box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
+  border-radius: 30px;
+  font-family: "CeraPro";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border: none;
+}
+
+.order-total {
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: rgba(18, 18, 18, 0.85);
+  margin: right;
+}
+
+.woocommerce-checkout-review-order-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-bottom: 54px;
+}
+
+.form-row-last button {
+  background: #E5D7BE;
+  -webkit-box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
+  box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
+  border-radius: 0 30px 30px 0;
+  font-family: "CeraPro";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  padding: 14px 62px;
+  border: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.woocommerce-form-coupon {
+  position: relative;
+}
+
+.woocommerce-form-coupon .input-text {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
 }
 /*# sourceMappingURL=main.css.map */

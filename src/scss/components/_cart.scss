@@ -36,15 +36,62 @@
 
   }
   .input-text  {
-    border: 1px solid rgba(18, 18, 18, 0.2)!important;
-    border-radius: 118px!important;
-    color: rgba(18, 18, 18, 0.26)!important;
-    padding: 19px 30px!important;
+    border: 1px solid rgba(18, 18, 18, 0.2);
+    border-radius: 118px;
+    color: rgba(18, 18, 18, 0.26);
+    padding: 19px 30px;
+    width: 100%;
+    font-family: 'CeraPro';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(18, 18, 18, 0.6);
   }
+
   .woocommerce form .form-row-first, .woocommerce form .form-row-last, .woocommerce-page form .form-row-first, .woocommerce-page form .form-row-last {
     width:100%;
     overflow: visible;
+    margin: 0;
+  }
+  #billing_contactmethod_field {
+    padding-top: 38px;
+    margin: 0;
+    font-family: 'CeraPro';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(18, 18, 18, 0.85);
+    label {
+      font-weight: 500;
+    }
+    span {
+      font-weight: 400;
+    }
+    .woocommerce-input-wrapper {
+      display: grid;
+      grid-template-columns: 10px 1fr;
+      gap: 10px;
+      padding-top: 16px;
+    }
+    abbr {
+      display: none;
+    }
+  }
 }
+.shop_table {
+  thead, tbody, .cart-subtotal, .woocommerce-shipping-totals {
+    display: none;
+  }
+}
+#order_review_heading {
+  margin: 0;
+  font-family: 'CeraPro';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(18, 18, 18, 0.85);
+  padding-top: 38px;
+  padding-bottom: 16px;
 }
 
 .woocommerce-mini-cart {
@@ -55,7 +102,7 @@
 
 
 .graph-modal__container {
-  padding: 25px 34px;
+  padding: 25px 34px 80px;
 }
 
 
@@ -86,7 +133,6 @@
   font-size: 16px;
   line-height: 20px;
   color: #121212;
-
 }
 
 
@@ -127,8 +173,127 @@
 
 
 .woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
-  display: flex;
   border: none;
   margin: 0;
   padding: 0;
+}
+
+
+
+.woocommerce .col2-set, .woocommerce-page .col2-set {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+
+.woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+
+
+.woocommerce-additional-fields {
+display: none;
+}
+
+.wc_payment_methods {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.payment_method_bacs, .payment_method_cod {
+  display: grid;
+  grid-template-columns: 10px 1fr;
+  gap: 10px;
+  font-family: 'CeraPro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #121212;
+}
+
+
+.woocommerce-privacy-policy-text {
+  display: none;
+}
+
+#place_order {
+  position: absolute;
+  bottom: 17px;
+  left: 34px;
+  right: 34px;
+  background: #E5D7BE;
+  box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
+  border-radius: 30px;
+  font-family: 'CeraPro';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border: none;
+}
+
+
+.order-total {
+  font-family: 'CeraPro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: rgba(18, 18, 18, 0.85);
+  margin: right;
+}
+
+
+.woocommerce-checkout-review-order-table {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 54px;
+}
+
+.form-row-last button {
+  background: #E5D7BE;
+  box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
+  border-radius: 0 30px 30px 0;
+  font-family: 'CeraPro';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  padding: 14px 62px;
+  border: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+
+.woocommerce-form-coupon{
+  position: relative;
+}
+
+.woocommerce-form-coupon {
+  .input-text {
+    padding-top: 14px!important;
+    padding-bottom: 14px!important;
+  }
+
 }
