@@ -614,18 +614,18 @@ a {
   line-height: 18px;
   color: #000000;
   border: 1px solid #E6D5BD;
+  border-color: #E6D5BD;
   border-radius: 30px;
   padding: 11px 44px;
   background-color: #ffffff;
-  -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  -o-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 .products-block .wp-element-button:hover {
-  background-color: #AD9A7E;
+  background-color: #121212;
+  border-color: #121212;
   color: #ffffff;
-  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
 }
 .products-block .addtocartbutton {
   margin-right: 19px;
@@ -645,8 +645,6 @@ a {
 }
 .products-block .addtocartbutton:hover {
   background-color: #ffffff;
-  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
 }
 
 a.added_to_cart.wc-forward {
@@ -733,9 +731,6 @@ a.added_to_cart.wc-forward {
   line-height: 18px;
   color: #000000;
 }
-.cart__modal .woocommerce-mini-cart__buttons {
-  display: none;
-}
 .cart__modal .woocommerce-mini-cart__total {
   text-align: right;
   font-family: "CeraPro";
@@ -791,33 +786,19 @@ a.added_to_cart.wc-forward {
 .cart__modal #billing_contactmethod_field abbr {
   display: none;
 }
-
-.shop_table thead, .shop_table tbody, .shop_table .cart-subtotal, .shop_table .woocommerce-shipping-totals {
-  display: none;
-}
-
-#order_review_heading {
-  margin: 0;
+.cart__modal .woocommerce-mini-cart__empty-message {
   font-family: "CeraPro";
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
   color: rgba(18, 18, 18, 0.85);
-  padding-top: 38px;
-  padding-bottom: 16px;
 }
-
-.woocommerce-mini-cart {
+.cart__modal .woocommerce-mini-cart {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
-.graph-modal__container {
-  padding: 25px 34px 80px;
-}
-
-.cart__title {
+.cart__modal .cart__title {
   display: block;
   font-family: "CeraPro";
   font-style: normal;
@@ -828,12 +809,10 @@ a.added_to_cart.wc-forward {
   padding-bottom: 25px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
 }
-
-.header-quickcart {
+.cart__modal .header-quickcart {
   margin-top: 24px;
 }
-
-.mini_cart_item a {
+.cart__modal .mini_cart_item a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -850,16 +829,28 @@ a.added_to_cart.wc-forward {
   line-height: 20px;
   color: #121212;
 }
-
-.graph-modal__container {
-  max-width: 766px;
+.cart__modal .woocommerce-mini-cart__buttons a {
+  display: block;
+  background: #E5D7BE;
+  border-radius: 30px;
+  font-family: "CeraPro";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  padding: 14px 62px;
+  border: none;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #E6D5BD;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
-
-.woocommerce-billing-fields h3 {
-  display: none;
+.cart__modal .woocommerce-mini-cart__buttons a:hover {
+  background-color: #ffffff;
 }
-
-.remove_from_cart_button {
+.cart__modal .remove_from_cart_button {
   font-family: "CeraPro";
   font-style: normal;
   font-weight: 300 !important;
@@ -873,8 +864,15 @@ a.added_to_cart.wc-forward {
   padding-bottom: 3px;
   margin-left: 34px;
 }
-
-.woocommerce-mini-cart-item-group .quantity {
+.cart__modal .woocommerce-mini-cart-item-group .quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.cart__modal .woocommerce-mini-cart-item-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -883,62 +881,48 @@ a.added_to_cart.wc-forward {
   align-items: center;
 }
 
-.woocommerce-mini-cart-item-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.graph-modal__container {
+  max-width: 766px;
+  padding: 25px 34px;
 }
 
-.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
-  border: none;
+.woocommerce-checkout {
+  position: relative;
+  max-width: 766px;
+  margin: 0 auto;
+}
+.woocommerce-checkout .woocommerce-billing-fields h3 {
   margin: 0;
-  padding: 0;
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  color: #121212;
+  padding-top: 90px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
 }
-
-.woocommerce .col2-set, .woocommerce-page .col2-set {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+.woocommerce-checkout .woocommerce-billing-fields__field-wrapper {
+  padding-top: 24px;
 }
-
-.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-}
-
-.woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-}
-
-.woocommerce-additional-fields {
+.woocommerce-checkout .shop_table thead, .woocommerce-checkout .shop_table tbody, .woocommerce-checkout .shop_table .cart-subtotal, .woocommerce-checkout .shop_table .woocommerce-shipping-totals {
   display: none;
 }
-
-.wc_payment_methods {
-  list-style: none;
+.woocommerce-checkout .woocommerce-error {
+  position: absolute;
+  top: 0;
+  color: red;
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
   margin: 0;
-  padding: 0;
+  padding-top: 10px;
+  padding-left: 18px;
+}
+.woocommerce-checkout .col2-set .col-1, .woocommerce-checkout .woocommerce-page .col2-set .col-1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -946,37 +930,168 @@ a.added_to_cart.wc-forward {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  width: 100%;
 }
-
-.payment_method_bacs, .payment_method_cod {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 10px 1fr;
-  grid-template-columns: 10px 1fr;
-  gap: 10px;
+.woocommerce-checkout .col2-set .col-2, .woocommerce-checkout .woocommerce-page .col2-set .col-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+.woocommerce-checkout .woocommerce-input-wrapper input {
+  width: 100%;
+}
+.woocommerce-checkout #billing_contactmethod_field {
+  margin: 0;
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  color: #121212;
+}
+.woocommerce-checkout #billing_contactmethod_field label {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  display: block;
+}
+.woocommerce-checkout #billing_contactmethod_field span label {
+  padding: 0;
+  margin: 15px;
+}
+.woocommerce-checkout #billing_contactmethod_field .woocommerce-input-wrapper {
   font-family: "CeraPro";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: #121212;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
-
-.woocommerce-privacy-policy-text {
+.woocommerce-checkout .input-radio {
+  width: 10px !important;
+  -webkit-transform: scale(2.2);
+  -ms-transform: scale(2.2);
+  transform: scale(2.2);
+  opacity: 0.5;
+  cursor: pointer;
+}
+.woocommerce-checkout input[type=radio]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -0.9px;
+  left: -3px;
+  position: relative;
+  background-color: #E5D7BE;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #ffffff;
+}
+.woocommerce-checkout .radio {
+  display: inline-block;
+}
+.woocommerce-checkout .payment_method_cod label {
+  margin-left: 10px;
+}
+.woocommerce-checkout .payment_method_bacs label {
+  margin-left: 10px;
+}
+.woocommerce-checkout #order_review_heading {
+  margin: 0;
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  color: #121212;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+.woocommerce-checkout .input-text {
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(18, 18, 18, 0.6);
+  border: 1px solid rgba(18, 18, 18, 0.2);
+  border-radius: 118px;
+  padding: 18px 30px;
+}
+.woocommerce-checkout .order-total {
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: rgba(18, 18, 18, 0.85);
+  margin: right;
+}
+.woocommerce-checkout .wc_payment_methods {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.woocommerce-checkout .woocommerce-checkout-review-order-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-bottom: 34px;
+}
+.woocommerce-checkout .order-total {
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: rgba(18, 18, 18, 0.85);
+  padding-top: 34px;
+  display: block;
+}
+.woocommerce-checkout .wc_payment_methods::before {
+  content: "Способ оплаты";
+  display: block;
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  color: rgba(18, 18, 18, 0.85);
+  padding-bottom: 15px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  gap: 10px;
+}
+.woocommerce-checkout #billing_contactmethod_field .required {
   display: none;
 }
-
-#place_order {
-  position: absolute;
-  bottom: 17px;
-  left: 34px;
-  right: 34px;
+.woocommerce-checkout .woocommerce-terms-and-conditions-wrapper {
+  display: none;
+}
+.woocommerce-checkout .wp-element-button {
+  margin-top: 10px;
+  margin-bottom: 34px;
   background: #E5D7BE;
   -webkit-box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
   box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
@@ -986,55 +1101,28 @@ a.added_to_cart.wc-forward {
   font-size: 14px;
   line-height: 18px;
   color: #000000;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  border: none;
-}
-
-.order-total {
-  font-family: "CeraPro";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 23px;
-  color: rgba(18, 18, 18, 0.85);
-  margin: right;
-}
-
-.woocommerce-checkout-review-order-table {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  padding-bottom: 54px;
-}
-
-.form-row-last button {
-  background: #E5D7BE;
-  -webkit-box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
-  box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
-  border-radius: 0 30px 30px 0;
-  font-family: "CeraPro";
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  color: #000000;
   padding: 14px 62px;
-  border: none;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 0;
+  width: 100%;
+  border: 1px solid;
+  border-color: #E5D7BE;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+.woocommerce-checkout .wp-element-button:hover {
+  background-color: #ffffff;
 }
 
-.woocommerce-form-coupon {
-  position: relative;
+.woocommerce-order {
+  max-width: 766px;
+  margin: 0 auto;
 }
 
-.woocommerce-form-coupon .input-text {
-  padding-top: 14px !important;
-  padding-bottom: 14px !important;
+.woocommerce-customer-details--email {
+  display: none;
+}
+
+.woocommerce-column__title {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

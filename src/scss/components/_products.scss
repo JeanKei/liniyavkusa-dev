@@ -70,15 +70,17 @@
     line-height: 18px;
     color: #000000;
     border: 1px solid #E6D5BD;
+    border-color: #E6D5BD;
     border-radius: 30px;
     padding: 11px 44px;
     background-color: #ffffff;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
   }
   .wp-element-button:hover {
-    background-color: #AD9A7E;
+    background-color: #121212;
+    border-color: #121212;
     color: #ffffff;
-    box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+    // box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
   }
   .addtocartbutton {
     margin-right: 19px;
@@ -96,7 +98,7 @@
   }
   .addtocartbutton:hover {
     background-color: #ffffff;
-    box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+    // box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
   }
 }
 

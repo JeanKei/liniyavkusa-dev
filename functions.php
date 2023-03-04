@@ -48,8 +48,6 @@ add_theme_support('woocommerce' );
 // Отключил стили WOO!
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
-
-
 // Убираем сортировку
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 
@@ -58,7 +56,7 @@ remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 )
 remove_action( 'woocommerce_after_shop_loop' , 'woocommerce_result_count', 20 );
 
 
-// Выводим 999 доваров
+// Выводим 999 товаров
 
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 999;' ), 20 );
 
@@ -126,16 +124,20 @@ echo do_shortcode('<a href="'.$link.'" class="button addtocartbutton">Подро
 /* добавили кнопку «в корзину» в товарах каталога WooC*/
 add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 
-// --------------------------------- РАБОТАЕТ -------------------------------
+
+
+/* ============================================================================================================  */
+/* ========================================== МИНИ КОРЗИНА ==================================================  */
+/* ============================================================================================================  */
+
+
+
 // Добавил автообновление в мини корзине + в mini cart - (ВАЖНО!! добавили нужный div с классом widget_shopping_cart_content -
-
-
 
 // function mihdan_wc_add_to_cart_message( $message, $product_id ) {
 //   return 'Ваш текст';
 // }
 // add_filter( 'wc_add_to_cart_message', 'mihdan_wc_add_to_cart_message', 10, 2 );
-// --------------------------------- КОНЕЦ РАБОТАЕТ -------------------------------
 
 
 // удаляем кнопку в корзину из МИНИ КОРЗИНЫ
@@ -143,7 +145,21 @@ remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_s
 
 
 // удаляем кнопку в ОФОРМЛЕНИЯ ЗАКАЗА из МИНИ КОРЗИНЫ
-remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
+// remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
+
+// Изменили подитог на итоговая сумма
+add_filter('gettext', 'translate_text');
+add_filter('ngettext', 'translate_text');
+function translate_text($translated) {
+$translated = str_ireplace('Подытог', 'Итоговая сумма', $translated);
+return $translated;
+}
+
+
+/* ============================================================================================================  */
+/* ========================================== ОФОРМЛЕНИЕ ЗАКАЗА ==================================================  */
+/* ============================================================================================================  */
+
 
 
 // Скрываем лишние поля
@@ -153,13 +169,13 @@ add_filter( 'woocommerce_checkout_fields', 'wpbl_remove_some_fields', 9999 );
 
     //unset( $array['billing']['billing_first_name'] ); // Имя
     //unset( $array['billing']['billing_phone'] ); // Телефон
-    //unset( $array['order']['order_comments'] ); // Примечание к заказу
-    unset( $array['billing']['billing_address_1'] ); // 1-ая строка адреса
+    // unset( $array['billing']['billing_address_1'] ); // 1-ая строка адреса
+    // unset( $array['billing']['billing_address_2'] ); // 2-ая стро.а адреса
     unset( $array['billing']['billing_last_name'] ); // Фамилия
+    unset( $array['order']['order_comments'] ); // Примечание к заказу
     unset( $array['billing']['billing_email'] ); // Email
     unset( $array['billing']['billing_company'] ); // Компания
     unset( $array['billing']['billing_country'] ); // Страна
-    // unset( $array['billing']['billing_address_2'] ); // 2-ая строка адреса
     unset( $array['billing']['billing_city'] ); // Населённый пункт
     unset( $array['billing']['billing_state'] ); // Область / район
     unset( $array['billing']['billing_postcode'] ); // Почтовый индекс
@@ -185,56 +201,38 @@ add_filter( 'woocommerce_checkout_fields', 'wplb_my_second1' );
 function wplb_my_second1( $array ) {
 
     // Меняем приоритет
-    $array['billing']['billing_last_name']['priority'] = 50;
+    $array['billing']['billing_address_2']['priority'] = 50;
     // Возвращаем обработанный массив
     return $array;
 
 }
 
-add_filter( 'woocommerce_checkout_fields', 'wplb_my_second2' );
-function wplb_my_second2( $array ) {
+// add_filter( 'woocommerce_checkout_fields', 'wplb_my_second2' );
+// function wplb_my_second2( $array ) {
 
-    // Меняем приоритет
-    $array['billing']['billing_address_2']['priority'] = 40;
-    // Возвращаем обработанный массив
-    return $array;
+//     // Меняем приоритет
+//     $array['billing']['billing_address_2']['priority'] = 40;
+//     // Возвращаем обработанный массив
+//     return $array;
 
-}
-
-
-// изменили placeholder
-
-add_filter('woocommerce_checkout_fields', 'njengah_override_checkout_fields');
-
-function njengah_override_checkout_fields($fields)
-
- {
-
- $fields['billing']['billing_first_name']['placeholder'] = 'Ваше имя';
- $fields['billing']['billing_address_1']['placeholder'] = 'Адрес доставки';
- $fields['billing']['billing_phone']['placeholder'] = 'Введите Ваш номер телефна';
- $fields['billing']['billing_last_name']['placeholder'] = 'Укажите желаемое время доставки';
- $fields['billing']['billing_address_2']['placeholder'] = 'Укажите желаемую дату доставки';
- return $fields;
-
- }
+// }
 
 // удалили label
 
  // WooCommerce Checkout Fields Hook
- add_filter( 'woocommerce_checkout_fields' , 'custom_wc_checkout_fields' );
+//  add_filter( 'woocommerce_checkout_fields' , 'custom_wc_checkout_fields' );
 
- // Change the format of fields with type, label, placeholder, class, required, clear, label_class, options
- function custom_wc_checkout_fields( $fields ) {
+//  // Change the format of fields with type, label, placeholder, class, required, clear, label_class, options
+//  function custom_wc_checkout_fields( $fields ) {
 
- //BILLING
- $fields['billing']['billing_first_name']['label'] = false;
- $fields['billing']['billing_address_1']['label'] = false;
- $fields['billing']['billing_phone']['label'] = false;
- $fields['billing']['billing_last_name']['label'] = false;
+//  //BILLING
+//  $fields['billing']['billing_first_name']['label'] = false;
+//  $fields['billing']['billing_address_1']['label'] = false;
+//  $fields['billing']['billing_phone']['label'] = false;
+//  $fields['billing']['billing_last_name']['label'] = false;
 
- return $fields;
- }
+//  return $fields;
+//  }
 
 
 //================================================= КАСТОМНОЕ ПОЛЕ =======================================
@@ -277,15 +275,23 @@ function true_save_field( $order_id ){
 
 }
 
+add_action( 'woocommerce_admin_order_data_after_billing_address', 'true_print_field_value', 25 );
+
+function true_print_field_value( $order ) {
+
+	if( $method = get_post_meta( $order->get_id(), 'billing_contactmethod', true ) ) {
+		echo '<p><strong>Предпочтительный метод связи:</strong><br>' . esc_html( $method ) . '</p>';
+	}
+}
 
 add_filter( 'woocommerce_get_order_item_totals', 'truemisha_field_in_email', 25, 2 );
 
 function truemisha_field_in_email( $rows, $order ) {
 
  	// удалите это условие, если хотите добавить значение поля и на страницу "Заказ принят"
-	if( is_order_received_page() ) {
-		return $rows;
-	}
+	// if( is_order_received_page() ) {
+	// 	return $rows;
+	// }
 
 	$rows[ 'billing_contactmethod' ] = array(
 		'label' => 'Необходимо ли обслуживание и сервировка?',
@@ -308,25 +314,58 @@ function wplb_my_second( $array ) {
 //================================================= КОНЕЦ КАСТОМНОЕ ПОЛЕ =======================================
 
 
+// удалили label
+
+ add_filter( 'woocommerce_checkout_fields' , 'custom_wc_checkout_fields' );
+
+ function custom_wc_checkout_fields( $fields ) {
+
+ $fields['billing']['billing_first_name']['label'] = false;
+ $fields['billing']['billing_address_1']['label'] = false;
+ $fields['billing']['billing_phone']['label'] = false;
+ $fields['billing']['billing_address_2']['label'] = false;
+
+ return $fields;
+ }
+
+
+// изменили placeholder
+
+add_filter('woocommerce_checkout_fields', 'njengah_override_checkout_fields');
+
+function njengah_override_checkout_fields($fields)
+
+ {
+
+ $fields['billing']['billing_first_name']['placeholder'] = 'Ваше имя';
+ $fields['billing']['billing_address_1']['placeholder'] = 'Адрес доставки';
+ $fields['billing']['billing_phone']['placeholder'] = 'Введите Ваш номер телефна';
+ $fields['billing']['billing_address_2']['placeholder'] = 'Укажите дату и время доставки';
+ return $fields;
+
+ }
+
+
+
 // Купон добавили в самый конец
 
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+// remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 
-add_action( 'woocommerce_after_checkout_form', 'woocommerce_checkout_coupon_form' );
+// add_action( 'woocommerce_after_checkout_form', 'woocommerce_checkout_coupon_form' );
 
 
 // Изменили название подитог
 
-add_filter('gettext', 'translate_text');
-add_filter('ngettext', 'translate_text');
+// add_filter('gettext', 'translate_text');
+// add_filter('ngettext', 'translate_text');
 
-function translate_text($translated) {
-$translated = str_ireplace('Подытог', 'Итоговая сумма', $translated);
-return $translated;
-}
+// function translate_text($translated) {
+// $translated = str_ireplace('Подытог', 'Итоговая сумма', $translated);
+// return $translated;
+// }
 
-remove_action('woocommerce_checkout_order_review','woocommerce_checkout_payment', 20 );
-    add_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 9 );
+// remove_action('woocommerce_checkout_order_review','woocommerce_checkout_payment', 20 );
+//     add_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 9 );
 
 
 // хлебные крошки
@@ -355,19 +394,29 @@ remove_action('woocommerce_checkout_order_review','woocommerce_checkout_payment'
 // }
 
 
-add_action( 'template_redirect', 'true_redirect_empty_cart', 25 );
+// add_action( 'template_redirect', 'true_redirect_empty_cart', 25 );
 
-function true_redirect_empty_cart() {
+// function true_redirect_empty_cart() {
 
-	if(
-	  is_cart()
-	  && is_checkout()
-	  && 0 == WC()->cart->get_cart_contents_count()
-	  && ! is_wc_endpoint_url( 'order-pay' )
-	  && ! is_wc_endpoint_url( 'order-received' )
-	) {
+// 	if(
+// 	  is_cart()
+// 	  && is_checkout()
+// 	  && 0 == WC()->cart->get_cart_contents_count()
+// 	  && ! is_wc_endpoint_url( 'order-pay' )
+// 	  && ! is_wc_endpoint_url( 'order-received' )
+// 	) {
 
-		wp_safe_redirect( 'редиректим куда-то' );
-		exit;
-	}
-}
+// 		wp_safe_redirect( 'редиректим куда-то' );
+// 		exit;
+// 	}
+// }
+
+
+// add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+//  function custom_override_checkout_fields( $fields ) {
+//    unset($fields['billing']['billing_country']);  //удаляем! тут хранится значение страны оплаты
+//    unset($fields['shipping']['shipping_country']); ////удаляем! тут хранится значение страны доставки
+//  return $fields;
+//  }
+
+

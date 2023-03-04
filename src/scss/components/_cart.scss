@@ -18,9 +18,6 @@
     line-height: 18px;
     color: #000000;
   }
-  .woocommerce-mini-cart__buttons {
-    display: none;
-  }
 
   .woocommerce-mini-cart__total {
     text-align: right;
@@ -77,223 +74,101 @@
       display: none;
     }
   }
-}
-.shop_table {
-  thead, tbody, .cart-subtotal, .woocommerce-shipping-totals {
-    display: none;
+  .woocommerce-mini-cart__empty-message {
+    font-family: 'CeraPro';
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    color: rgba(18, 18, 18, 0.85);
+  }
+
+  .woocommerce-mini-cart {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+
+
+  .cart__title {
+    display: block;
+    font-family: 'CeraPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    color: #121212;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+
+  }
+
+  .header-quickcart {
+    margin-top: 24px;
+  }
+
+  .mini_cart_item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'CeraPro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #121212;
+  }
+
+  .woocommerce-mini-cart__buttons a {
+    display: block;
+    background: #E5D7BE;
+    border-radius: 30px;
+    font-family: 'CeraPro';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    padding: 14px 62px;
+    border: none;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #E6D5BD;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .woocommerce-mini-cart__buttons a:hover {
+    background-color: #ffffff;
+  }
+
+  .remove_from_cart_button {
+    font-family: "CeraPro";
+    font-style: normal;
+    font-weight: 300!important;
+    font-size: 25px!important;
+    line-height: 25px!important;
+    color: #121212;
+    border-radius: 100%;
+    border: 1px solid rgba(18, 18, 18, .4);
+    width: 30px;
+    height: 30px;
+    padding-bottom: 3px;
+    margin-left: 34px;
+  }
+
+
+  .woocommerce-mini-cart-item-group .quantity {
+    display: flex;
+    align-items: center;
+  }
+
+  .woocommerce-mini-cart-item-group {
+    display: flex;
+    align-items: center;
   }
 }
-#order_review_heading {
-  margin: 0;
-  font-family: 'CeraPro';
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  color: rgba(18, 18, 18, 0.85);
-  padding-top: 38px;
-  padding-bottom: 16px;
-}
-
-.woocommerce-mini-cart {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-
-.graph-modal__container {
-  padding: 25px 34px 80px;
-}
-
-
-.cart__title {
-  display: block;
-  font-family: 'CeraPro';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 28px;
-  color: #121212;
-  padding-bottom: 25px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
-
-}
-
-.header-quickcart {
-  margin-top: 24px;
-}
-
-.mini_cart_item a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'CeraPro';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  color: #121212;
-}
-
 
 .graph-modal__container {
   max-width: 766px;
+  padding: 25px 34px;
 }
 
-.woocommerce-billing-fields h3 {
-  display: none;
-}
-
-
-.remove_from_cart_button {
-  font-family: "CeraPro";
-  font-style: normal;
-  font-weight: 300!important;
-  font-size: 25px!important;
-  line-height: 25px!important;
-  color: #121212;
-  border-radius: 100%;
-  border: 1px solid rgba(18, 18, 18, .4);
-  width: 30px;
-  height: 30px;
-  padding-bottom: 3px;
-  margin-left: 34px;
-}
-
-
-.woocommerce-mini-cart-item-group .quantity {
-  display: flex;
-  align-items: center;
-}
-
-.woocommerce-mini-cart-item-group {
-  display: flex;
-  align-items: center;
-}
-
-
-.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
-
-
-.woocommerce .col2-set, .woocommerce-page .col2-set {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-
-
-.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
-display: flex;
-flex-direction: column;
-width: 100%;
-}
-
-.woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
-display: flex;
-flex-direction: column;
-width: 100%;
-}
-
-
-.woocommerce-additional-fields {
-display: none;
-}
-
-.wc_payment_methods {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.payment_method_bacs, .payment_method_cod {
-  display: grid;
-  grid-template-columns: 10px 1fr;
-  gap: 10px;
-  font-family: 'CeraPro';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #121212;
-}
-
-
-.woocommerce-privacy-policy-text {
-  display: none;
-}
-
-#place_order {
-  position: absolute;
-  bottom: 17px;
-  left: 34px;
-  right: 34px;
-  background: #E5D7BE;
-  box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
-  border-radius: 30px;
-  font-family: 'CeraPro';
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  color: #000000;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  border: none;
-}
-
-
-.order-total {
-  font-family: 'CeraPro';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 23px;
-  color: rgba(18, 18, 18, 0.85);
-  margin: right;
-}
-
-
-.woocommerce-checkout-review-order-table {
-  display: flex;
-  justify-content: flex-end;
-  padding-bottom: 54px;
-}
-
-.form-row-last button {
-  background: #E5D7BE;
-  box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.34);
-  border-radius: 0 30px 30px 0;
-  font-family: 'CeraPro';
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  color: #000000;
-  padding: 14px 62px;
-  border: none;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 0;
-}
-
-
-.woocommerce-form-coupon{
-  position: relative;
-}
-
-.woocommerce-form-coupon {
-  .input-text {
-    padding-top: 14px!important;
-    padding-bottom: 14px!important;
-  }
-
-}

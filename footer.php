@@ -12,7 +12,6 @@
         <section class="cart__modal">
           <span class="cart__title">Корзина</span>
           <div class="header-quickcart"><?php woocommerce_mini_cart(); ?></div>
-          <?php echo do_shortcode('[woocommerce_checkout]');?>
         </section>
       </div>
     </div>
