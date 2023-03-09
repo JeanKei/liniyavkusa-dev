@@ -346,6 +346,21 @@ function njengah_override_checkout_fields($fields)
  }
 
 
+// Скрываем мини корзину на нужной нам странице
+
+  add_action('wp_head','quadlayers_checkout_style');
+
+  function quadlayers_checkout_style(){
+           if(is_checkout()==true){
+
+                   echo '<style> #top-cart .top-cart-icon {
+                    display: none;}<style>';
+           }
+  }
+
+
+
+
 
 // Купон добавили в самый конец
 

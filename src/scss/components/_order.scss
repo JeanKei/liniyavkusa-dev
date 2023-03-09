@@ -10,3 +10,89 @@
 .woocommerce-column__title {
   display: none;
 }
+
+.woocommerce-thankyou-order-received {
+    padding-top: 50px;
+    padding-bottom: 34px;
+    text-align: center;
+    font-family: "CeraPro";
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 40px;
+    color: #000000;
+    margin: 0;
+}
+
+.wc_payment_method {
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #121212;
+}
+
+.order_details {
+  padding: 0;
+  padding-bottom: 50px;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+  list-style: none;
+}
+
+.woocommerce-order-details__title {
+  padding-bottom: 20px;
+  text-align: center;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  color: #000000;
+  margin: 0;
+}
+
+.woocommerce-table--order-details {
+  text-align: left;
+  padding-bottom: 20px;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+  list-style: none;
+  th {
+    font-weight: 300!important;
+  }
+}
+
+.order_item {
+  text-align: left;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.product-quantity {
+  text-align: left;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.woocommerce-customer-details address {
+  text-align: left;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  font-style: normal!important;
+}

@@ -899,7 +899,7 @@ a.added_to_cart.wc-forward {
   font-size: 22px;
   line-height: 28px;
   color: #121212;
-  padding-top: 90px;
+  padding-top: 40px;
   padding-bottom: 25px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
 }
@@ -1124,5 +1124,128 @@ a.added_to_cart.wc-forward {
 
 .woocommerce-column__title {
   display: none;
+}
+
+.woocommerce-thankyou-order-received {
+  padding-top: 50px;
+  padding-bottom: 34px;
+  text-align: center;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  color: #000000;
+  margin: 0;
+}
+
+.wc_payment_method {
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #121212;
+}
+
+.order_details {
+  padding: 0;
+  padding-bottom: 50px;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+  list-style: none;
+}
+
+.woocommerce-order-details__title {
+  padding-bottom: 20px;
+  text-align: center;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  color: #000000;
+  margin: 0;
+}
+
+.woocommerce-table--order-details {
+  text-align: left;
+  padding-bottom: 20px;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+  list-style: none;
+}
+.woocommerce-table--order-details th {
+  font-weight: 300 !important;
+}
+
+.order_item {
+  text-align: left;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.product-quantity {
+  text-align: left;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.woocommerce-customer-details address {
+  text-align: left;
+  font-family: "CeraPro";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  font-style: normal !important;
+}
+
+.woocommerce-info {
+  padding-top: 30px;
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #121212;
+}
+
+.showcoupon {
+  color: #E5D7BE;
+  font-weight: 500;
+}
+
+.woocommerce-form-coupon .input-text {
+  padding: 13px 30px;
+  width: 100%;
+}
+.woocommerce-form-coupon .form-row-last {
+  margin: 0;
+}
+.woocommerce-form-coupon .woocommerce-checkout .wp-element-button {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.woocommerce-form-coupon {
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(18, 18, 18, 0.6);
 }
 /*# sourceMappingURL=main.css.map */

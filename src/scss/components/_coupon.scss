@@ -1,0 +1,38 @@
+.woocommerce-info {
+  padding-top: 30px;
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #121212;
+}
+
+.showcoupon {
+  color: #E5D7BE;
+  font-weight: 500;
+
+}
+
+.woocommerce-form-coupon {
+  .input-text {
+    padding: 13px 30px;
+    width: 100%;
+  }
+  .form-row-last {
+    margin: 0;
+  }
+  .woocommerce-checkout .wp-element-button {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.woocommerce-form-coupon {
+  font-family: "CeraPro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(18, 18, 18, 0.6);
+}
